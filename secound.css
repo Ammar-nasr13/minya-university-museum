@@ -1,0 +1,82 @@
+body {
+    font-family: 'Roboto', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f8f9fa; /* لون خلفية الصفحة */
+    color: #333; /* لون النص */
+}
+.container {
+    max-width: 1200px; /* عرض أقصى للحاوية */
+    margin: 0 auto; /* توسيط الحاوية */
+    padding: 50px; /* مسافة داخل الحاوية */
+    display: flex; /* استخدام الفليكس لتوزيع العناصر */
+    flex-direction: column; /* ترتيب العناصر عموديًا */
+    align-items: center; /* محاذاة العناصر في المنتصف */
+}
+.image-section {
+    position: relative; /* لجعل العنوان فوق الصورة */
+    width: 100%; /* عرض كامل */
+    max-width: 838px; /* عرض أقصى للصورة */
+    border-radius: 15px; /* زوايا دائرية للصورة */
+    overflow: hidden; /* لإخفاء الأجزاء الزائدة */
+    margin-bottom: 30px; /* مسافة أسفل الصورة */
+}
+img {
+    width: 100%; /* عرض الصورة كامل */
+    height: 600px; /* ارتفاع تلقائي للحفاظ على نسبة العرض إلى الارتفاع */
+    transition: transform 0.5s; /* تأثير التحويل للصورة */
+}
+.image-section:hover img {
+    transform: scale(1.05); /* تكبير الصورة عند التمرير */
+}
+.image-title {
+    position: absolute; /* وضع العنوان فوق الصورة */
+    bottom: 10px; /* المسافة من الأسفل */
+    left: 10px; /* المسافة من اليسار */
+    color: white; /* لون النص */
+    background-color: rgba(0, 0, 0, 0.7); /* خلفية مظللة */
+    padding: 10px; /* مسافة داخل العنوان */
+    border-radius: 5px; /* زوايا دائرية للعنوان */
+    font-size: 1.5em; /* حجم الخط */
+    font-weight: 700; /* وزن الخط */
+}
+.text-section {
+    background-color: white; /* لون خلفية النص */
+    border-radius: 15px; /* زوايا دائرية للنص */
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1); /* ظل */
+    padding: 20px; /* مسافة داخل النص */
+    max-width: 800px; /* عرض أقصى للنص */
+    text-align: center; /* محاذاة النص في المنتصف */
+    transition: transform 0.3s; /* تأثير التحويل للنص */
+}
+.text-section:hover {
+    transform: translateY(-5px); /* رفع القسم عند التمرير */
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.2); /* زيادة الظل عند التمرير */
+}
+.text-section h2 {
+    margin-top: 0; /* إزالة المسافة العلوية */
+    font-size: 2.5em; /* حجم الخط */
+    color: #4f5153; /* لون العنوان */
+    position: relative; /* لجعل التأثيرات تعمل بشكل صحيح */
+    display: inline-block; /* لجعل التأثيرات تعمل بشكل صحيح */
+}
+.text-section h2::after {
+    content: ''; /* إضافة محتوى فارغ */
+    display: block; /* عرض ككتلة */
+    width: 50%; /* عرض التأثير */
+    height: 4px; /* ارتفاع التأثير */
+    background: #007BFF; /* لون التأثير */
+    margin: 10px auto 0; /* محاذاة التأثير في المنتصف */
+    transition: width 0.3s; /* تأثير الانتقال */
+}
+.text-section h2:hover::after {
+    width: 100%; /* توسيع التأثير عند التمرير */
+}
+.description {
+    position: relative;
+    bottom: 40px;
+    font-size: 1.4em; /* حجم الخط */
+    font-weight: bold;
+    text-align: right;
+    line-height: 2.5;
+}

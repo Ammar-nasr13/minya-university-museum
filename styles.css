@@ -1,0 +1,351 @@
+body {
+  font-family: 'Roboto', sans-serif;;
+  background-color: #f4f4f4;
+  margin: 0; /* إزالة الهوامش الافتراضية */
+}
+
+
+.navbar {
+  justify-content: space-between;
+  display: flex; /* تأكد من استخدام flexbox لتوزيع العناصر */
+    position: fixed; /* تثبيت navbar */
+    top: 0; /* تثبيته في الجزء العلوي من الصفحة */
+    left: 0; /* تأكد من أن navbar يبدأ من اليسار */
+    width: 100%; /* جعل navbar يمتد عبر عرض الصفحة بالكامل */
+    z-index: 1000; 
+}
+
+#logo{
+ 
+  position: absolute;
+  width: 85px;
+  height: 55px;
+  left: 200px;
+ bottom: 10px;
+  
+  
+}
+
+  .navbar-brand {
+    color: #ffcc00;
+    font-size: 24px;
+    font-weight: bold;
+    font-family: 'CyberJunkies', sans-serif; 
+   
+
+}
+
+.navbar .navbar-brand{
+  color: #ffcc00;
+}
+
+.bg-dark {
+  background-color: #343a40;
+}
+
+.secondary-navbar {
+  background-color: #343a40;
+  overflow-x: auto; /* Enable horizontal scrolling */
+  white-space: nowrap; /* Prevent line breaks */
+}
+.secondary-navbar {
+  background-color: #4b4b4b;
+  overflow-x: auto; /* Enable horizontal scrolling */
+  white-space: nowrap; /* Prevent line breaks */
+  position: fixed; /* Fix the navbar at the top */
+  top: 65px; /* Position it below the main navbar */
+  left: 0;
+  right: 0;
+  z-index: 1000; /* Ensure it stays above other content */
+  text-align: center;
+}
+.secondary-navbar a {
+  display: inline-block; /* Display links inline */
+  color: white;
+  padding: 10px 15px;
+  text-decoration: none;
+}
+.secondary-navbar a:hover {
+  background-color: #666;
+}
+.slider-container {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+  top :25px;
+}
+
+.slide {
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  background-position: center;
+  display: none; /* Hide all slides initially */
+}
+
+.slide1 {
+  background-image: url('images/images3.png');
+}
+
+.slide2 {
+  background-image: url('images/images5.jpeg');
+}
+
+.slide3 {
+  background-image: url('images/images6.jpeg');
+}
+
+.active {
+  display: block; /* Show the active slide */
+}
+
+.arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: #fff;
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+  font-size: 24px;
+  color: #333;
+  z-index: 10;
+}
+
+#arrow-left {
+  left: 20px;
+}
+
+#arrow-right {
+  right: 20px;
+}
+.caption {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color:whitesmoke;
+  font-size: 36px;
+  background: rgba(0, 0, 0, 0.5);
+  padding: 10px 20px;
+  border-radius: 5px;
+  opacity: 1;
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+/* تأثير الظهور */
+@keyframes fadeInText {
+  0% {
+      opacity: 0;
+      transform: translate(-50%, -50%) scale(0.9);
+  }
+  100% {
+      opacity: 1;
+      transform: translate(-50%, -50%) scale(1);
+  }
+}
+
+/* تأثيرات عند تمرير الماوس */
+.caption:hover {
+  transform: translate(-50%, -50%) scale(1.1);
+  box-shadow: 0 0 15px rgba(255, 255, 255, 0.7);
+  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+/* عنوان قسم المتحف */
+.section-title {
+  text-align: center; /* محاذاة العنوان في المنتصف */
+  margin: 40px 0; /* تباعد خارجي */
+}
+
+.section-title h2 {
+  font-size: 35px; /* حجم الخط */
+  font-weight: bold;
+  color: #343a40; /* لون العنوان */
+  margin-bottom: 10px; /* تباعد أسفل العنوان */
+  position: relative; /* لجعل التأثيرات تعمل بشكل صحيح */
+  display: inline-block; /* لجعل التأثيرات تعمل بشكل صحيح */
+  transition: color 0.3s ease, transform 0.3s ease; /* تأثيرات التحول */
+}
+
+.section-title h2:hover {
+  color: #ffcc00; /* تغيير اللون عند التمرير */
+  transform: translateY(-3px); /* رفع العنوان عند التمرير */
+  text-shadow: 0 2px 5px rgba(0, 0, 0, 0.3); /* تأثير الظل */
+}
+
+.title-underline {
+  width: 50%; /* عرض الخط */
+  height: 3px; /* سمك الخط */
+  background-color: #ffcc00; /* لون الخط */
+  margin: 0 auto; /* محاذاة الخط في المنتصف */
+  transition: background-color 0.3s ease; /* تأثير التحول للون الخط */
+}
+
+.section-title h2:hover + .title-underline {
+  background-color: #ffcc00; /* تغيير لون الخط عند تمرير الفأرة على العنوان */
+}
+
+  /* قسم المعلومات */
+  .info-section {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin: 50px auto;
+    max-width: 1000px;
+    padding: 20px;
+    background-color: rgba(0, 0, 0, 0.8);
+    border-radius: 15px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+
+.info-section:hover {
+    transform: scale(1.05); /* تأثير الحركة للأمام */
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5); /* زيادة الظل */
+}
+
+.image-container {
+    position: relative;
+    width: 40%;
+}
+
+.image-container img {
+    width: 100%;
+    border-radius: 10px;
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+
+.image-container:hover img {
+    transform: scale(1.05);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.4);
+}
+
+.image-description {
+    margin-top: 10px;
+    font-size: 20px;
+    font-weight: bold;
+    color: #e9e5e5; /* لون رمادي فاتح */
+    text-align: center;
+}
+
+.text-container {
+    width: 55%;
+    font-size: 18px;
+    line-height: 1.6;
+    color: #dddddd; /* لون رمادي فاتح */
+    text-align: right; /* لعرض النص باللغة العربية */
+}
+
+.text-container p {
+    margin: 0;
+}
+
+/* قسم البطاقات */
+
+        .content {
+            padding: 20px;
+        }
+        .section1-title {
+            text-align: center;
+            font-size: 2.5em; /* حجم الخط */
+            color: #333; /* لون النص */
+            margin-bottom: 20px; /* مسافة أسفل العنوان */
+            position: relative; /* لتحديد موضع العناصر الفرعية */
+        }
+        .section1-title::after {
+            content: '';
+            display: block;
+            width: 50px; /* عرض الخط السفلي */
+            height: 4px; /* ارتفاع الخط السفلي */
+            background-color: #007BFF; /* لون الخط السفلي */
+            margin: 10px auto; /* توسيط الخط السفلي */
+        }
+        .card-container {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+            margin-top: 20px;
+        }
+        .image{
+
+          height: 200px;
+        }
+        .card {
+            background-color: #fff; /* لون خلفية البطاقة */
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            width: 200px;
+            margin: 10px;
+            text-align: center;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            transition: transform 0.2s;
+        }
+        .card:hover {
+            transform: scale(1.05);
+        }
+        .card img {
+            width: 100%;
+            border-top-left-radius: 5px;
+            border-top-right-radius: 5px;
+        }
+       div .card-title {
+          padding: 10px;
+          font-size: 18px;
+          color: #333;
+          text-decoration: none;
+          display: block; /* جعل العنوان كتلة */
+          transition: color 0.3s; /* تأثير انتقال اللون */
+      }
+     div .card-title:hover {
+          color: #007BFF; /* لون عند التمرير */
+      }
+        
+/* قائمة تذييل  */
+footer {
+  background-color: #333; /* لون خلفية الفوتر */
+  color: #fff; /* لون النص */
+  padding: 40px 0; /* تباعد داخلي */
+}
+.footer a {
+  color: #fff; /* لون الروابط */
+  transition: color 0.3s; /* تأثير التحول عند التمرير */
+}
+.footer a:hover {
+  color: #ffcc00; /* تغيير اللون عند التمرير */
+}
+.social-icon {
+  margin: 0 10px; /* تباعد بين الأيقونات */
+  font-size: 24px; /* حجم الأيقونات */
+  transition: transform 0.3s; /* تأثير التحول عند التمرير */
+}
+.social-icon:hover {
+  transform: scale(1.2); /* تكبير الأيقونة عند التمرير */
+}
+.footer .copyright {
+  text-align: right; /* محاذاة حقوق الطبع والنشر لليمين */
+}
+.pp{
+  margin-top: 10px;
+}
+.footer .social {
+  text-align: left; /* محاذاة الأيقونات لليسار */
+}
+.footer .logo {
+  max-width: 130px; /* تحديد عرض الشعار */
+  margin-top: -10px;
+}
+.contact-info {
+  text-align: center; /* محاذاة معلومات الاتصال في المنتصف */
+  margin: 20px 0; /* تباعد عمودي */
+}
+.contact-icon {
+  margin: 0 10px; /* تباعد بين الأيقونات */
+  font-size: 20px; /* حجم الأيقونات */
+}
