@@ -80,3 +80,15 @@ img {
     text-align: right;
     line-height: 2.5;
 }
+/* Media Queries */
+@media (max-width: 768px) {
+    .container {
+        padding: 20px; /* تقليل المسافة داخل الحاوية */
+    }
+
+    .image-title {
+        font-size: 1.2em; /* تقليل حجم خط العنوان */
+    }
+
+    .text-section h2 {
+        font-size: 2em;} }
