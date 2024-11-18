@@ -81,13 +81,18 @@ img {
     line-height: 2.5;
 }
 /* Media Queries */
-@media (max-width: 768px) {
+@media (max-width: 750px) {
     .container {
         padding: 20px; /* تقليل المسافة داخل الحاوية */
     }
 
     .image-title {
         font-size: 1.2em; /* تقليل حجم خط العنوان */
+    }
+     img {
+       
+        height: 400px; /* ارتفاع تلقائي للحفاظ على نسبة العرض إلى الارتفاع */
+ 
     }
 
     .text-section h2 {
